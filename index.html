@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultra Metals | Premium Tin, Copper & Aluminium Alloys in Moradabad</title>
+    <meta name="description" content="Ultra Metals (www.ultrametals.in) is a leading supplier of high-grade Tin (60/40, 40/60, 30/70, 99%), Copper, and Aluminium based in Moradabad, Uttar Pradesh. Contact us at +91 9027830986.">
+    <meta name="keywords" content="Ultra Metals, Tin Ingots, 60/40 Tin, 99% Tin, Copper Ingots, Aluminium Alloys, Metal Supplier Moradabad, Industrial Metals UP, Scrap Metal Moradabad, Ultrametals.in">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- DESIGN TOKENS --- */
+        :root {
+            --bg-color: #0b0c10; 
+            --surface-color: #12151c; 
+            --text-primary: #f8f9fa;
+            --text-secondary: #8b94a3;
+            --accent-copper: #b86b38; 
+            --accent-silver: #c0c5ce;
+            --border-color: #1f2530;
+            --font-display: 'Playfair Display', serif;
+            --font-body: 'Inter', sans-serif;
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* --- BASE STYLES --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.7;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 400; line-height: 1.1; }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-color); }
+        ::-webkit-scrollbar-thumb { background: var(--border-color); }
+        ::-webkit-scrollbar-thumb:hover { background: var(--accent-copper); }
+
+        /* --- BACKGROUND THEME --- */
+        .bg-grid-lines {
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1;
+            pointer-events: none;
+            background-image: 
+                linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
+            background-size: 80px 80px;
+            mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+            -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+        }
+
+        .container {
+            width: 90%; max-width: 1400px; margin: 0 auto;
+        }
+
+        /* --- NAVIGATION --- */
+        nav {
+            position: fixed; top: 0; width: 100%; padding: 1.2rem 0;
+            background: rgba(11, 12, 16, 0.85); backdrop-filter: blur(10px);
+            z-index: 1000; border-bottom: 1px solid var(--border-color);
+        }
+
+        nav .container { display: flex; justify-content: space-between; align-items: center; }
+        
+        .logo {
+            font-family: var(--font-display); font-size: 1.5rem; letter-spacing: 2px; color: #fff;
+            display: flex; align-items: center; gap: 10px;
+        }
+        .logo span { color: var(--accent-copper); font-style: italic; }
+
+        .nav-links { display: flex; gap: 2.5rem; }
+        
+        .nav-links a {
+            font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px;
+            color: var(--text-secondary); font-weight: 500; position: relative;
+            padding-bottom: 5px;
+        }
+
+        .nav-links a::after {
+            content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1px;
+            background: var(--accent-copper); transition: width 0.4s var(--ease-out-expo);
+        }
+
+        .nav-links a:hover { color: #fff; }
+        .nav-links a:hover::after { width: 100%; }
+
+        .menu-toggle { display: none; font-size: 1.3rem; color: #fff; cursor: pointer; }
+
+        /* --- HERO SECTION --- */
+        header {
+            min-height: 100vh; display: flex; align-items: flex-end; padding-bottom: 8vh;
+            position: relative; border-bottom: 1px solid var(--border-color);
+            background: radial-gradient(circle at 80% 20%, rgba(184, 107, 56, 0.05), transparent 50%);
+        }
+
+        .hero-content { max-width: 1000px; }
+        
+        .hero-label {
+            font-size: 0.75rem; text-transform: uppercase; letter-spacing: 4px;
+            color: var(--accent-copper); margin-bottom: 1.5rem; display: block;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(2.5rem, 7vw, 6.5rem); margin-bottom: 2rem;
+            letter-spacing: -1px;
+        }
+
+        .hero-content h1 i { color: var(--text-secondary); font-size: 0.8em; }
+
+        .hero-content p {
+            font-size: clamp(1rem, 1.5vw, 1.2rem); color: var(--text-secondary);
+            max-width: 600px; margin-bottom: 3rem; font-weight: 300;
+        }
+
+        .btn-modern {
+            display: inline-flex; align-items: center; gap: 15px; padding: 1rem 0;
+            font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 500;
+            color: #fff; cursor: pointer; background: none; border: none; position: relative;
+        }
+
+        .btn-modern::after {
+            content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 1px;
+            background: var(--border-color); transition: var(--ease-out-expo);
+        }
+
+        .btn-modern i {
+            transition: transform 0.4s var(--ease-out-expo); color: var(--accent-copper);
+        }
+
+        .btn-modern:hover i { transform: translateX(10px); }
+        .btn-modern:hover::after { background: var(--accent-copper); }
+
+        /* --- SECTIONS --- */
+        section { padding: clamp(5rem, 8vw, 9rem) 0; border-bottom: 1px solid var(--border-color); }
+
+        /* --- ABOUT SECTION --- */
+        .about-wrapper {
+            display: grid; grid-template-columns: 80px 1fr 1fr; gap: 3rem; align-items: start;
+        }
+
+        .about-side-text {
+            writing-mode: vertical-rl; transform: rotate(180deg);
+            font-size: 0.7rem; text-transform: uppercase; letter-spacing: 4px;
+            color: var(--text-secondary); display: flex; align-items: center; gap: 20px;
+        }
+
+        .about-side-text::before {
+            content: ''; width: 1px; height: 50px; background: var(--accent-copper);
+        }
+
+        .about-text h2 {
+            font-size: clamp(2rem, 3.5vw, 3rem); margin-bottom: 2rem;
+        }
+
+        .about-text h2 span { color: var(--accent-copper); font-style: italic; }
+
+        .about-text p {
+            color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 1rem;
+        }
+
+        .about-image-wrap {
+            position: relative; padding-top: 2rem; 
+        }
+
+        .about-image-wrap::before {
+            content: ''; position: absolute; top: 0; left: -15px; width: 100%; height: 100%;
+            border: 1px solid var(--border-color); z-index: -1;
+        }
+
+        .about-image-wrap img {
+            width: 100%; height: auto; display: block;
+            filter: grayscale(20%) contrast(110%);
+            transition: filter 0.6s ease;
+        }
+
+        .about-image-wrap:hover img { filter: grayscale(0%) contrast(100%); }
+
+        /* --- PRODUCTS SECTION --- */
+        .section-header-flex {
+            display: flex; justify-content: space-between; align-items: flex-end;
+            margin-bottom: 4rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1.5rem;
+            flex-wrap: wrap; gap: 1rem;
+        }
+
+        .section-header-flex h2 { font-size: clamp(2rem, 3.5vw, 3rem); }
+
+        .section-header-flex p {
+            max-width: 400px; color: var(--text-secondary); font-size: 0.9rem;
+        }
+
+        .products-grid {
+            display: grid; grid-template-columns: repeat(12, 1fr); gap: 2rem;
+        }
+
+        .product-card { grid-column: span 4; }
+        .product-card:nth-child(2) { margin-top: 3rem; } 
+
+        .product-card {
+            background: var(--surface-color); border: 1px solid var(--border-color);
+            transition: all 0.5s var(--ease-out-expo); position: relative; overflow: hidden;
+        }
+
+        .product-card:hover {
+            border-color: rgba(184, 107, 56, 0.5);
+            transform: translateY(-5px);
+        }
+
+        .product-image {
+            width: 100%; height: 250px; overflow: hidden; position: relative;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .product-image img {
+            width: 100%; height: 100%; object-fit: cover;
+            filter: grayscale(80%); transition: all 0.8s var(--ease-out-expo);
+        }
+
+        .product-card:hover .product-image img {
+            filter: grayscale(0%); transform: scale(1.05);
+        }
+
+        .product-content { padding: 2rem; position: relative; }
+
+        .product-number {
+            position: absolute; top: 2rem; right: 2rem;
+            font-family: var(--font-display); font-size: 3rem; color: rgba(255,255,255,0.03);
+            line-height: 1; font-style: italic;
+        }
+
+        .product-content h3 {
+            font-size: 1.3rem; margin-bottom: 1.2rem; position: relative; z-index: 1;
+        }
+
+        .product-content ul li {
+            color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 0.6rem;
+            display: flex; align-items: center; gap: 10px;
+        }
+
+        .product-content ul li::before {
+            content: '—'; color: var(--accent-copper); font-size: 0.8rem;
+        }
+
+        /* --- CONTACT SECTION --- */
+        .contact-wrapper {
+            display: grid; grid-template-columns: 1fr 1.5fr; gap: 4rem;
+        }
+
+        .contact-details h2 { font-size: clamp(2rem, 3.5vw, 3rem); margin-bottom: 1.5rem; }
+        
+        .contact-list { margin-top: 2rem; }
+        
+        .contact-item {
+            display: flex; gap: 1.5rem; padding: 1.2rem 0; border-bottom: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover { padding-left: 10px; border-bottom-color: var(--accent-copper); }
+
+        .contact-item i {
+            color: var(--accent-copper); font-size: 1rem; margin-top: 6px;
+        }
+
+        .contact-item p, .contact-item a { color: var(--text-secondary); font-size: 0.95rem; }
+        .contact-item a:hover { color: #fff; }
+        
+        .contact-label {
+            display: block; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px;
+            color: #fff; margin-bottom: 0.3rem; font-weight: 500;
+        }
+
+        .map-wrap {
+            border: 1px solid var(--border-color); height: 100%; min-height: 400px; position: relative;
+        }
+
+        .map-wrap iframe {
+            width: 100%; height: 100%; border: none;
+            filter: invert(90%) hue-rotate(180deg) contrast(120%) grayscale(50%);
+            transition: filter 0.5s ease;
+        }
+        
+        .map-wrap:hover iframe { filter: invert(90%) hue-rotate(180deg) contrast(100%) grayscale(0%); }
+
+        /* --- FOOTER --- */
+        footer {
+            padding: 3rem 0; background: var(--bg-color);
+        }
+
+        .footer-flex {
+            display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 2rem;
+        }
+
+        .footer-logo {
+            font-family: var(--font-display); font-size: 1.4rem; letter-spacing: 2px; color: #fff;
+        }
+        .footer-logo span { color: var(--accent-copper); font-style: italic; }
+
+        .social-links { display: flex; gap: 1rem; }
+
+        .social-links a {
+            display: flex; justify-content: center; align-items: center;
+            width: 40px; height: 40px; border: 1px solid var(--border-color); border-radius: 50%;
+            color: var(--text-secondary); font-size: 0.9rem; transition: all 0.4s var(--ease-out-expo);
+        }
+
+        .social-links a:hover {
+            background: var(--accent-copper); color: #fff; border-color: var(--accent-copper);
+            transform: translateY(-5px);
+        }
+
+        .footer-bottom {
+            margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border-color);
+            text-align: center; font-size: 0.8rem; color: var(--text-secondary);
+        }
+
+        /* --- ANIMATIONS --- */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 1s var(--ease-out-expo); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* --- RESPONSIVE DESIGN --- */
+        @media (max-width: 1024px) {
+            .nav-links { gap: 1.5rem; }
+            .about-wrapper { grid-template-columns: 1fr; gap: 2rem; }
+            .about-side-text { writing-mode: horizontal-tb; transform: none; }
+            .about-side-text::before { display: none; }
+            .about-image-wrap { padding-top: 0; }
+            .about-image-wrap::before { display: none; }
+            
+            .product-card { grid-column: span 6; }
+            .product-card:nth-child(2) { margin-top: 0; }
+            .product-card:nth-child(3) { grid-column: span 12; display: flex; flex-direction: row; }
+            .product-card:nth-child(3) .product-image { width: 40%; height: auto; border-bottom: none; border-right: 1px solid var(--border-color); }
+            .product-card:nth-child(3) .product-content { width: 60%; }
+            
+            .contact-wrapper { grid-template-columns: 1fr; }
+            .map-wrap { min-height: 300px; }
+        }
+
+        @media (max-width: 768px) {
+            /* Mobile Menu Styles */
+            .nav-links {
+                position: fixed; top: 0; right: -100%; width: 100%; height: 100vh;
+                background: var(--bg-color); flex-direction: column; justify-content: center;
+                align-items: center; transition: 0.5s var(--ease-out-expo); z-index: 999;
+                gap: 2.5rem;
+            }
+            .nav-links.active { right: 0; }
+            .nav-links a { font-size: 1.2rem; letter-spacing: 2px; }
+            .menu-toggle { display: block; z-index: 1001; }
+            
+            /* Layout Adjustments for Mobile */
+            .section-header-flex { flex-direction: column; align-items: flex-start; }
+            .product-card { grid-column: span 12; }
+            .product-card:nth-child(3) { flex-direction: column; }
+            .product-card:nth-child(3) .product-image { width: 100%; height: 250px; border-right: none; border-bottom: 1px solid var(--border-color); }
+            .product-card:nth-child(3) .product-content { width: 100%; }
+            
+            .footer-flex { flex-direction: column; text-align: center; }
+            .hero-content h1 { font-size: 2.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Background Architectural Grid -->
+    <div class="bg-grid-lines"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">ULTRA<span>METALS</span></div>
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home">
+        <div class="container reveal">
+            <div class="hero-content">
+                <span class="hero-label">Moradabad • Uttar Pradesh</span>
+                <h1>Uncompromising <br><i>Metallurgical</i> Quality.</h1>
+                <p>A premier supplier of high-grade Tin, Copper, and Aluminium. We serve industries nationwide with an unwavering commitment to purity, precision, and reliability.</p>
+                <a href="#products" class="btn-modern">
+                    View Products <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container reveal">
+            <div class="about-wrapper">
+                <div class="about-side-text">ESTABLISHED EXCELLENCE</div>
+                <div class="about-text">
+                    <h2>Rooted in <br><span>Industrial</span> Integrity.</h2>
+                    <p>Welcome to <strong>Ultra Metals</strong>, your trusted partner in the metal trading and supply industry. Strategically located in the industrial heart of Moradabad, Uttar Pradesh, we specialize in providing top-tier non-ferrous metals to a diverse range of sectors.</p>
+                    <p>With a commitment to quality, integrity, and customer satisfaction, we have established ourselves as a premier supplier of various grades of Tin, Copper, and Aluminium. Whether you require standard alloys or specific imported grades, our robust supply chain ensures timely delivery and consistent quality.</p>
+                    <p>Our operations are built on transparency and industrial expertise. We understand the metallurgical needs of modern manufacturing and strive to deliver materials that meet the highest industry standards.</p>
+                </div>
+                <div class="about-image-wrap">
+                    <!-- NEW IMAGE: Molten metal pouring in a foundry - directly relates to products -->
+                    <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=1000&auto=format&fit=crop" alt="Molten metal being poured in a foundry - Ultra Metals">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products">
+        <div class="container reveal">
+            <div class="section-header-flex">
+                <h2>Material Catalog</h2>
+                <p>Precision-engineered alloys and pure metals tailored for heavy industry and specialized manufacturing.</p>
+            </div>
+            
+            <div class="products-grid">
+                
+                <!-- Product 1: Tin -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="tin.jpg" alt="Tin Ingots" onerror="this.src='https://images.unsplash.com/photo-1605810230434-7631ac76ec81?q=80&w=1000&auto=format&fit=crop'">
+                    </div>
+                    <div class="product-content">
+                        <span class="product-number">01</span>
+                        <h3>Tin <br>Alloys</h3>
+                        <ul>
+                            <li>Tin 60/40 %</li>
+                            <li>Tin 40/60 %</li>
+                            <li>Tin 30/70 %</li>
+                            <li>Pure Tin 99%</li>
+                            <li>Imported Tin</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Product 2: Copper -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="copper.jpg" alt="Copper Ingots" onerror="this.src='https://images.unsplash.com/photo-1558442074-3c19857bc1dc?q=80&w=1000&auto=format&fit=crop'">
+                    </div>
+                    <div class="product-content">
+                        <span class="product-number">02</span>
+                        <h3>Copper <br>Grades</h3>
+                        <ul>
+                            <li>Various Industrial Grades</li>
+                            <li>High Purity Copper</li>
+                            <li>Custom Alloys upon request</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Product 3: Aluminium -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="scrap.jpg" alt="Aluminium Scrap and Alloys" onerror="this.src='https://images.unsplash.com/photo-1535295972055-1c762f4483e5?q=80&w=1000&auto=format&fit=crop'">
+                    </div>
+                    <div class="product-content">
+                        <span class="product-number">03</span>
+                        <h3>Aluminium <br>Series</h3>
+                        <ul>
+                            <li>Various Alloy Grades</li>
+                            <li>Industrial Grade Aluminium</li>
+                            <li>High-Quality Ingots & Scrap</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" style="border-bottom: none;">
+        <div class="container reveal">
+            <div class="contact-wrapper">
+                <div class="contact-details">
+                    <h2>Direct <br>Inquiries.</h2>
+                    <p style="color: var(--text-secondary); margin-bottom: 2rem;">For pricing, specifications, or logistical inquiries, please reach out to our operations desk.</p>
+                    
+                    <div class="contact-list">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <span class="contact-label">Facility Location</span>
+                                <p>QPPX+P6Q, Behind Om Enterprises, Veerpur, Industrial Area, Faridpur Hamir, Moradabad, Uttar Pradesh 244001</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <div>
+                                <span class="contact-label">Direct Line</span>
+                                <p><a href="tel:+919027830986">+91 9027830986</a></p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <i class="fas fa-globe"></i>
+                            <div>
+                                <span class="contact-label">Web Presence</span>
+                                <p><a href="http://www.ultrametals.in" target="_blank">www.ultrametals.in</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <span class="contact-label">Electronic Mail</span>
+                                <p><a href="mailto:info.ultrametals@gmail.com">info.ultrametals@gmail.com</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="map-wrap">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3497.289346150078!2d78.7616943150864!3d28.83712698233426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDUwJzEzLjciTiA3OMKwNDUnNTAuMCJF!5e0!3m2!1sen!2sin!4v1680000000000!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-flex">
+                <div class="footer-logo">ULTRA<span>METALS</span></div>
+                <div class="social-links">
+                    <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Ultra Metals. All Rights Reserved. | www.ultrametals.in</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Interactivity -->
+    <script>
+        // Mobile Menu
+        const menuToggle = document.getElementById('mobile-menu');
+        const navLinks = document.getElementById('nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = menuToggle.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                const icon = menuToggle.querySelector('i');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-times');
+            });
+        });
+
+        // Scroll Reveal Animation
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
